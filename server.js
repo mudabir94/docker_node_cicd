@@ -8,6 +8,7 @@ const database  = require( 'ronin-database' )
 async function main() {
 
 	try {
+	console.log("connecting to database...")
     await database.connect( process.env.CONNECTIONSTRING )
 
     const server = ronin.server({
