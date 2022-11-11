@@ -7,6 +7,8 @@
 - Using the docker-composer file, the configuration settings are defined containing the ports, volume and image information. 
 # Github Actions
 - Using the github actions ci pipeline workflow configuring is done. 
-
+## Github WorkFlow
+- Continious integration to github repository.
+- Continious integration to docker hub. 
 # Commands to run the application
 - 
