@@ -9,10 +9,10 @@ async function main() {
 
 	try {
 	console.log("connecting to Mongodb database...")
-    await database.connect( process.env.CONNECTIONSTRING )
+    await database.connect( 'mongodb://127.0.0.1:27017/node-docker' )
 
     const server = ronin.server({
-			port: process.env.SERVER_PORT
+			port: 8000
 		})
 
 		server.use( '/', mocks.server( server.Router()) )
@@ -33,7 +33,9 @@ function shutdown( signal ) {
 	console.info( `[${signal}] shutting down...` )
 	process.exit()
 }
-
+//The SIGINT signal interrupted the process
+// SIGTERM - signal terminated the process.
+// The process on functions will be call when the process or server is interupted or terminated. 
 process.on( 'SIGINT', () => shutdown( 'SIGINT' ) )
 process.on( 'SIGTERM', () => shutdown( 'SIGTERM' ) )
 
