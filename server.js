@@ -9,10 +9,10 @@ async function main() {
 
 	try {
 	console.log("connecting to Mongodb database...")
-    await database.connect( 'mongodb://127.0.0.1:27017/node-docker' )
+    await database.connect( process.env.CONNECTIONSTRING )
 
     const server = ronin.server({
-			port: 8000
+			port: process.env.SERVER_PORT
 		})
 
 		server.use( '/', mocks.server( server.Router()) )
