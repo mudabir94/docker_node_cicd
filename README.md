@@ -7,8 +7,11 @@
 - Using the docker-composer file, the configuration settings are defined containing the ports, volume and image information. 
 # Github Actions
 - Using the github actions ci pipeline workflow configuring is done. 
-## Github WorkFlow
+## Github Action WorkFlow
 - Continious integration to github repository.
+    - When the code is commited and pushed through the master branch, github action githubrequest.yml (CI to GHCR) runs. The packge node_docker on github also updates.  
 - Continious integration to docker hub. 
-# Commands to run the application
-- 
+    - When code is commited with tag V.*.*.*, github action ci.yml (CI to docker hub) runs and updates the image on the dockerhub. 
+# Running the application locally.
+- Pulling the node_docker package you can easily start the server that runs on port 8001. 
+- POST "localhost:8001/foo, returns a success message. 
