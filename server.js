@@ -15,7 +15,7 @@ async function main() {
 			port: process.env.SERVER_PORT
 		})
 
-		server.use( '/', mocks.server( server.Router()) )
+		server.use( '/', mocks.server( server.Router(), false, true) )
 		server.use( '/foo', (req, res) => {
             return res.json({ "foo": "bar" })
           })
