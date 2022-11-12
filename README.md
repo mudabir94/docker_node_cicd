@@ -14,4 +14,4 @@
     - When code is commited with tag V.*.*.*, github action ci.yml (CI to docker hub) runs and updates the image on the dockerhub. 
 # Running the application locally.
 - Pulling the node_docker package you can easily start the server that runs on port 8001. 
-- POST "localhost:8001/foo, returns a success message. 
+- POST "localhost:8001/test or /foo, returns a success message. 
